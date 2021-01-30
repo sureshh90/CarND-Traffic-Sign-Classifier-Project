@@ -33,14 +33,14 @@ The steps of this project are as follows:
 [image8]: ./writeup_images/training_5.jpg "Training"
 [image9]: ./writeup_images/training_6.jpg "Training"
 
-[image10]: ./new_test_images/1-Speed-limit-30-km-h.jpg "Images from internet"
+[image10]: ./new_test_images/01-Speed-limit-30-km-h.jpg "Images from internet"
 [image11]: ./new_test_images/11-Right-of-way-at-the-next-intersection.jpg "Images from internet"
 [image12]: ./new_test_images/12-Priority-road.jpg "Images from internet"
 [image13]: ./new_test_images/14-Stop.jpg "Images from internet"
 [image14]: ./new_test_images/15-No-vehicles.jpg "Images from internet"
 
 
-[image15]: ./writeup_images/softmax_prob_1-Speed-limit-30-km-h.jpg "Softmax Probabilities"
+[image15]: ./writeup_images/softmax_prob_01-Speed-limit-30-km-h.jpg "Softmax Probabilities"
 [image16]: ./writeup_images/softmax_prob_11-Right-of-way-at-the-next-intersection.jpg "Softmax Probabilities"
 [image17]: ./writeup_images/softmax_prob_12-Priority-road.jpg "Softmax Probabilities"
 [image18]: ./writeup_images/softmax_prob_14-Stop.jpg "Softmax Probabilities"
@@ -63,10 +63,10 @@ The steps of this project are as follows:
 
 Numpy library is used to calculate the statistics of the traffic signs data set:
 
-* The size of training set is 34799
-* The size of the validation set is 4410
-* The size of test set is 12630
-* The shape of a traffic sign image is (32, 32)
+* The size of training set is **34799**
+* The size of the validation set is **4410**
+* The size of test set is **12630**
+* The shape of a traffic sign image is **(32, 32, 3)**
     (Here the shape represent the size of the scaled image that is available in the ```test['features']``` array. It does not represent the size of the original image.)
 * The number of unique classes/labels in the data set is 43
 
@@ -291,8 +291,8 @@ The project could be extended by adding the following features.
 
 ### References:
 
-[1] The lecture material on Stochastic Gradient Descent.
-[2] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
-[3] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
+*[1] The lecture material on Stochastic Gradient Descent.
+*[2] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
+*[3] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
 
 
