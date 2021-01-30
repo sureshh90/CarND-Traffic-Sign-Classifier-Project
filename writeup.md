@@ -248,7 +248,6 @@ For the first image, the model is relatively sure that the sign is **30 kmph sig
 ![alt text][image15]
 
 
-**
 For the second image, the model is sure (with probability of 1) that the sign is **Right of way at the next intersection**, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image16]
