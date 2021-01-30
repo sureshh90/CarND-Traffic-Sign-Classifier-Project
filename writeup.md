@@ -1,9 +1,6 @@
 # **Traffic Sign Recognition** 
 
 ## Writeup
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -46,14 +43,6 @@ The steps of this project are as follows:
 [image18]: ./writeup_images/softmax_prob_14-Stop.jpg "Softmax Probabilities"
 [image19]: ./writeup_images/softmax_prob_15-No-vehicles.jpg "Softmax Probabilities"
 
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ---
 ### Writeup / README
 
@@ -68,7 +57,7 @@ Numpy library is used to calculate the statistics of the traffic signs data set:
 * The size of test set is **12630**
 * The shape of a traffic sign image is **(32, 32, 3)**
     (Here the shape represent the size of the scaled image that is available in the ```test['features']``` array. It does not represent the size of the original image.)
-* The number of unique classes/labels in the data set is 43
+* The number of unique classes/labels in the data set is **43**
 
 #### 2. An exploratory visualization of the dataset.
 
@@ -76,15 +65,15 @@ Here is an exploratory visualization of the data set.
 
 A bar chart representing the number of examples for each class has been plotted.
 
-#### Training Set
+### Training Set
 
 ![alt text][image1]
 
-#### Validation Set
+### Validation Set
 
 ![alt text][image2]
 
-#### Test Set
+### Test Set
 
 ![alt text][image3]
 
@@ -170,17 +159,17 @@ The final model yielded the following results:
 
 The code can found in the section '**Train the model**' section.
 
-An iterative approach was applied to reach a validation set accuracy of atleast 0.93.
+An iterative approach was applied to reach a validation set accuracy of atleast **0.93**.
 
 * The initial architecture chosen was the LeNet architecture that was explained in the lecture.
 
-* The performance of the architecture was first analysed. As seen from the below figure, we could reach an accuracy of around 0.9. It could also be seen that the training accuracy was nearing 1, which implies the network is overfitting.
-The learning rate is 0.001, the batch size is 128 and only shuffling is done as preprocessing step.
+* The performance of the architecture was first analysed. As seen from the below figure, we could reach an accuracy of around **0.9**. It could also be seen that the training accuracy was nearing **1**, which implies the network is overfitting.
+The learning rate is **0.001**, the batch size is **128** and only shuffling is done as preprocessing step.
 
    ![alt text][image4]
 
 
-* In order to reduce, the overfitting from the previous step, dropout layers were introduced. Because of the introduction of the dropout layers (with the keep probability of 0.5), the number of epochs were not enough to completely reduce the loss. This resulted in a validation accuracy of 0.7. It can also be noted that the training accuracy is 0.62, which means the network is underfitting. The other parametes are same as the previous step.
+* In order to reduce, the overfitting from the previous step, dropout layers were introduced. Because of the introduction of the dropout layers (with the keep probability of **0.5**), the number of epochs were not enough to completely reduce the loss. This resulted in a validation accuracy of **0.7**. It can also be noted that the training accuracy is **0.62**, which means the network is underfitting. The other parametes are same as the previous step.
 
     ![alt text][image5]
 
@@ -189,7 +178,7 @@ The learning rate is 0.001, the batch size is 128 and only shuffling is done as 
         * Increase the keep probability so that the learnt representations are retained. 
           (Caution should be applied not to increase it much since it leads to overfitting.)
   
-  The below figure shows the accuracy with the parameters number of epochs as 100 and keep probability of 0.6. It could be noticed that validation and training accuracy are close to each other (which indicates a good training pattern) and validation accuracy is around 0.95. The other parametes are same as the previous step.
+  The below figure shows the accuracy with the parameters number of epochs as **100** and keep probability of **0.6**. It could be noticed that validation and training accuracy are close to each other (which indicates a good training pattern) and validation accuracy is around **0.95**. The other parametes are same as the previous step.
      
      ![alt text][image6]
      
@@ -197,7 +186,7 @@ The learning rate is 0.001, the batch size is 128 and only shuffling is done as 
 
     One reason for this behaviour can be attributed to the preprocessing step. Since the input data (pixel) has a large range, it could be difficult for the algorithm to converge. Therefore, as the next step, normalisation techniques were added to the preprocessing step. The other parametes are same as the previous step.
     
-    A few trails with Simple Normalisation (Section 1.1) revealed that it did not increase the validation accuracy much.
+    A few trails with Simple Normalisation (**Section 1.1**) revealed that it did not increase the validation accuracy much.
     
     An example figure is shown below.
     
@@ -205,13 +194,13 @@ The learning rate is 0.001, the batch size is 128 and only shuffling is done as 
     
      Errata: In the image the preprocessing step is shown as Only Shuffle but it should be Shuffle + Easy Normalisation.
     
-    Hence the MinMax Scaling was used as normalisation technique and with keep probability of 0.4 we could achieve a validation accuracy of around 0.80. The other parametes are same as the previous step. 
+    Hence the MinMax Scaling was used as normalisation technique and with keep probability of **0.4** we could achieve a validation accuracy of around **0.80**. The other parametes are same as the previous step. 
 
     ![alt text][image8]
    
     Errata: In the image the preprocessing step is shown as Only Shuffle but it should be Shuffle + MinMax Scaling.
    
-* As the final step, to increase the training accuracy (or to reduce underfitting) the keep probability was increased to 0.5. The number of epochs has been reduced to 35 since the accuracy started to saturate and then decrease. (This calibration is similar to early termination but done manually). The other parametes are same as the previous step. 
+* As the final step, to increase the training accuracy (or to reduce underfitting) the keep probability was increased to **0.5**. The number of epochs has been reduced to **35** since the accuracy started to saturate and then decrease. (This calibration is similar to early termination but done manually). The other parametes are same as the previous step. 
     
     ![alt text][image9]
     
@@ -227,7 +216,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image10] ![alt text][image11] ![alt text][image12] 
 ![alt text][image13] ![alt text][image14]
 
-The images comes in higher resolution and have to scaled down to 32 * 32 image. This results in loss of quality of the input image. The output images from resizing operation seems to be more pixelated which might result in bad classifications.
+The images comes in higher resolution and have to scaled down to **32 * 32 * 3** image. This results in loss of quality of the input image. The output images from resizing operation seems to be more pixelated which might result in bad classifications.
 
 
 The first image might be difficult to classify because the pixelation on the image is large. Since usually numbers are difficult to classify and in addition this pixelation increases the difficulty of classification.
@@ -247,36 +236,36 @@ Here are the results of the prediction:
 | No vehicles 								| No vehicles									|
 
 
-The model was able to correctly guess 5 out of the 5 traffic signs, which gives an accuracy of 100%. 
+The model was able to correctly guess 5 out of the 5 traffic signs, which gives an accuracy of **100%**. 
 
-Comparing to the accuracy on the test set (94%) this is high. The reason could also be attributed to the number of examples in the new test set (which is currently five).
+Comparing to the accuracy on the test set **(94%)** this is high. The reason could also be attributed to the number of examples in the new test set (which is currently five).
 
 
 #### 3. Discussion on how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. 
 
-For the first image, the model is relatively sure that the sign is 30 kmph sign and the image is 30 kmph. The top five soft max probabilities are plotted in a bar graph below.
+For the first image, the model is relatively sure that the sign is **30 kmph sign** and the image is **30 kmph**. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image15]
 
 
-
-For the second image, the model is sure (with probability of 1) that the sign is Right of way at the next intersection, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
+**
+For the second image, the model is sure (with probability of 1) that the sign is **Right of way at the next intersection**, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image16]
 
 
 
-For the third image, the model is sure (with probability of 1) that the sign is Priority Road, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
+For the third image, the model is sure (with probability of 1) that the sign is **Priority Road**, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image17]
 
 
-For the fourth image, the model is sure (with probability of 1) that the sign is Stop, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
+For the fourth image, the model is sure (with probability of 1) that the sign is **Stop**, and the image does contain a that sign. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image18]
 
 
-For the fifth image, the model is completely sure about the sign, and classifies the sign with a probability of around 0.6. The next closest prediction is 50 kmph. The top five soft max probabilities are plotted in a bar graph below.
+For the fifth image, the model is completely not sure about the **No Vehicle** sign, but classifies the sign with a probability of around **0.6**. The next closest prediction is **50 kmph**. The top five soft max probabilities are plotted in a bar graph below.
 
 ![alt text][image19]
 
@@ -291,8 +280,8 @@ The project could be extended by adding the following features.
 
 ### References:
 
-*[1] The lecture material on Stochastic Gradient Descent.
-*[2] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
-*[3] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
+* [1] The lecture material on Stochastic Gradient Descent.
+* [2] Link: [Gentle Introduction to the Adam Optimization Algorithm for Deep Learning](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/).
+* [3] The code used in this project is heavily based on the code available from exercises/assignments from the lectures.
 
 
